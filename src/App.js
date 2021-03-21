@@ -137,7 +137,10 @@ function App() {
           className='btn'
           onClick={clearBoard}
         >
-          Clear</button>
+          {state.current.winningColor === 0
+            ? 'Clear Board'
+            : 'Next Game?'}
+        </button>
 
       </div>
 
