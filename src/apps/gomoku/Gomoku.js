@@ -144,7 +144,7 @@ const Gomoku = () => {
                         : 'Next Game?'}
                 </button>
             </div>
-            <Link to='/'>Home</Link>
+            <Link to='/'>Go Back to Home</Link>
         </div >
 
     )

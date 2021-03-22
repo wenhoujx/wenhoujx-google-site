@@ -20,7 +20,6 @@ function App() {
         path='/gomoku'
         component={Gomoku}
       />
-
     </Router>
   );
 }

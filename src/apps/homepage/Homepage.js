@@ -15,7 +15,7 @@ const Homepage = () => {
                 >
                     <Header />
                     <Link to='/me'>About Me</Link>
-                    <Link to='/gomoku'>Gomoku Game</Link>
+                    <Link to='/gomoku'>Gomoku(Connect-Five) Game</Link>
                 </div>
                 )
             }

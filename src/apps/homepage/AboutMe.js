@@ -21,7 +21,7 @@ const AboutMe = () => {
             </p>
             <br />
             <p>
-                <Link to='/'>Go Back</Link>
+                <Link to='/'>Go Back to Home</Link>
             </p>
 
         </div>
