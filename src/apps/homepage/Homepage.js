@@ -16,6 +16,7 @@ const Homepage = () => {
                     <Header />
                     <Link to='/me'>About Me</Link>
                     <Link to='/gomoku'>Gomoku(Connect-Five) Game</Link>
+                    <Link to='/game-of-life'>Conway's Game of Life Simulation</Link>
                 </div>
                 )
             }

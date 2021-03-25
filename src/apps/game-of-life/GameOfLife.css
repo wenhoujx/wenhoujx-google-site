@@ -1,0 +1,24 @@
+.game-of-life-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.header {
+    font-size: x-large;
+}
+.cell{
+    width: 20px;
+    height: 20px;
+    border: solid 1px black;
+}
+
+.red-cell{
+    background-color: red;
+}
+
+.control {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}

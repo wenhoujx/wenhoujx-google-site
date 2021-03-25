@@ -1,6 +1,7 @@
 import './App.css'
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
+import { BrowserRouter as Router, Route } from 'react-router-dom'
 import Gomoku from './apps/gomoku/Gomoku'
+import GameOfLife from './apps/game-of-life/GameOfLife';
 import AboutMe from './apps/homepage/AboutMe';
 import Homepage from './apps/homepage/Homepage';
 
@@ -19,6 +20,10 @@ function App() {
       <Route
         path='/gomoku'
         component={Gomoku}
+      />
+      <Route
+        path='/game-of-life'
+        component={GameOfLife}
       />
     </Router>
   );
