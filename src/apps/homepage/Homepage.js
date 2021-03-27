@@ -14,9 +14,10 @@ const Homepage = () => {
                     className='homepage-container'
                 >
                     <Header />
-                    <Link to='/me'>About Me</Link>
                     <Link to='/gomoku'>Gomoku(Connect-Five) Game</Link>
                     <Link to='/game-of-life'>Conway's Game of Life Simulation</Link>
+                    <br />
+                    <Link to='/me'>About Me</Link>
                 </div>
                 )
             }

@@ -5,8 +5,8 @@ import React, { useState } from 'react'
 import Square from './components/Square';
 
 const Gomoku = () => {
-    const nRows = 30;
-    const nCols = 30;
+    const nRows = 25;
+    const nCols = 25;
     const maxHistory = 10;
     const nWins = 5;
 
@@ -109,7 +109,7 @@ const Gomoku = () => {
             <div className='board'
                 style={{
                     display: 'grid',
-                    gridTemplateColumns: `repeat(${nCols}, 30px)`
+                    gridTemplateColumns: `repeat(${nCols}, 40px)`
                 }}
             >
                 {state.current.board.map((row, rowIndex) =>
