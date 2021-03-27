@@ -23,7 +23,6 @@ function App() {
         <Link to='/me'>About Me</Link>
       </div>
     )
-
   }
 
   return (
