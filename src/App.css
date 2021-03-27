@@ -4,3 +4,11 @@
     justify-content: center;
     align-items: center;
 }
+
+.homepage-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-image: url('https://wallpaper.wiki/wp-content/uploads/2018/05/popular-desktop-wallpaper17.jpg');
+}
