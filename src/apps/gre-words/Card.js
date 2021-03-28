@@ -5,9 +5,9 @@ const right = 39
 
 const Card = ({ nextWord: { word, meaning }, onKnow, onNotKnow }) => {
     const [showMeaning, setShowMeaning] = useState(false)
+    const [websterMenaing, setWebsterMeaning] = useState(meaning)
 
     const clickNextWord = useCallback(() => {
-        console.log('show next word')
         setShowMeaning(false)
         onNotKnow()
     }, [onNotKnow])
@@ -22,10 +22,8 @@ const Card = ({ nextWord: { word, meaning }, onKnow, onNotKnow }) => {
 
     const onKeyDown = useCallback((e) => {
         if (e.keyCode === left) {
-            console.log('left arrow')
             clickNotKnow()
         } else if (e.keyCode === right) {
-            console.log('right arrow')
             showMeaning ? clickNextWord() : clickKnow()
         }
     }, [clickNotKnow, showMeaning, clickNextWord, clickKnow])
@@ -36,6 +34,21 @@ const Card = ({ nextWord: { word, meaning }, onKnow, onNotKnow }) => {
             window.removeEventListener('keydown', onKeyDown)
         }
     }, [onKeyDown])
+
+
+    const websterUrl = 'https://www.dictionaryapi.com/api/v3/references/collegiate/json/'
+    useEffect(() => {
+        (async () => {
+            const url = new URL(websterUrl + word)
+            url.searchParams.append('key', process.env.REACT_APP_WEBSTER_KEY)
+            const shortDef = (await (await fetch(url)).json())[0]?.shortdef
+            setWebsterMeaning(shortDef ?
+                shortDef.map((str) => '* ' + str).join('\r\n\r\n')
+                // use default meaning
+                : meaning
+            )
+        })()
+    })
 
     return (
         <div className='card-container'>
@@ -59,7 +72,6 @@ const Card = ({ nextWord: { word, meaning }, onKnow, onNotKnow }) => {
                                     onClick={clickKnow}
                                 >
                                     I know this word (&#x2192;)</button>
-
                             </>)
                 }
             </div>
@@ -68,12 +80,10 @@ const Card = ({ nextWord: { word, meaning }, onKnow, onNotKnow }) => {
             </div>
             {
                 showMeaning &&
-                <div className='meaning'>
-                    {meaning}
-                </div>
+                <p className='meaning'>
+                    {websterMenaing}
+                </p>
             }
-
-
         </div>
     )
 }

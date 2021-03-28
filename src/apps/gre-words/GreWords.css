@@ -45,6 +45,7 @@
 .meaning {
     padding: 20px;
     color:darkmagenta;
+    white-space: pre-line;
 }
 
 .review-header {
