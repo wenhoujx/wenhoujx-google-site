@@ -27,13 +27,13 @@ const GreWords = () => {
     const onKnow = () => {
         console.log('add known words')
         setKnow((current) => produce(current, copy => {
-            copy.push(remaining[0])
+            return [remaining[0]].concat(copy)
         }))
         nextWord()
     }
 
     const onNotKnow = () => {
-        setNotKnow((current) => produce(current, copy => { copy.push(remaining[0]) }))
+        setNotKnow((current) => produce(current, copy => { return [remaining[0]].concat(copy) }))
         nextWord()
     }
 
@@ -62,7 +62,9 @@ const GreWords = () => {
                 <div>
                     <p
                         className='review-header'
-                    >Review</p>
+                    >
+                        {'Review: ' + notKnow.length}
+                    </p>
                     <TextareaAutosize
                         className='note'
                         readOnly
@@ -72,7 +74,9 @@ const GreWords = () => {
                 <div>
                     <p
                         className='review-header'
-                    >Mastered</p>
+                    >
+                        {'Mastered: ' + know.length}
+                    </p>
                     <TextareaAutosize
                         className='note'
                         readOnly
