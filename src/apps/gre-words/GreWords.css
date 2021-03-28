@@ -3,6 +3,7 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    padding: 10px;
 }
 
 .card-container {
@@ -38,6 +39,7 @@
     margin: 30px;
     font-size: xx-large;
     font-weight: 800;
+    background-color: darkorange;
 }
 
 .meaning {
@@ -47,4 +49,5 @@
 
 .review-header {
     font-weight: 700;
+    background-color: darkseagreen;
 }
