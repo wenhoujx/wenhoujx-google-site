@@ -1,8 +1,9 @@
 import './App.css'
-import { BrowserRouter as Router, Route, Link, useLocation } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
 import Gomoku from './apps/gomoku/Gomoku'
 import GameOfLife from './apps/game-of-life/GameOfLife';
 import AboutMe from './apps/about-me/AboutMe';
+import GreWords from './apps/gre-words/GreWords';
 
 function App() {
 
@@ -18,6 +19,7 @@ function App() {
         </header>
         <Link to='/gomoku'>Gomoku(Connect-Five) Game</Link>
         <Link to='/game-of-life'>Conway's Game of Life Simulation</Link>
+        <Link to='/gre-words'>GRE Volcabulary Flashcards</Link>
         <br />
 
         <Link to='/me'>About Me</Link>
@@ -44,6 +46,10 @@ function App() {
         <Route
           path='/game-of-life'
           component={GameOfLife}
+        />
+        <Route
+          path='/gre-words'
+          component={GreWords}
         />
       </Router>
     </>

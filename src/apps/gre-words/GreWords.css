@@ -1,0 +1,39 @@
+.main-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.card-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.review {
+    display: flex;
+    flex-direction: row;
+}
+
+.card-control {
+    display: flex;
+    flex-direction: row;
+}
+.btn {
+    font-size: large;
+    margin: 10px;
+}
+.header {
+    font-size: xx-large;
+}
+
+.note {
+    margin: 10px;
+}
+
+.card {
+    padding: 30px;
+    margin: 30px;
+}

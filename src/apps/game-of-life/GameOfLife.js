@@ -59,7 +59,7 @@ const GameOfLife = () => {
         setTimeout(runSimulation, 100)
     }
 
-    useEffect(runSimulation, [running])
+    useEffect(runSimulation)
 
     const randomGrid = () => {
         setGrid((current) => produce(current, (copy) => {
