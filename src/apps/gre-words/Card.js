@@ -39,15 +39,6 @@ const Card = ({ nextWord: { word, meaning }, onKnow, onNotKnow }) => {
 
     return (
         <div className='card-container'>
-            <div className='card'>
-                {word}
-            </div>
-            {
-                showMeaning &&
-                <div>
-                    {meaning}
-                </div>
-            }
             <div className='card-control'>
                 {
                     showMeaning ?
@@ -71,9 +62,17 @@ const Card = ({ nextWord: { word, meaning }, onKnow, onNotKnow }) => {
 
                             </>)
                 }
-
-
             </div>
+            <div className='card'>
+                {word}
+            </div>
+            {
+                showMeaning &&
+                <div className='meaning'>
+                    {meaning}
+                </div>
+            }
+
 
         </div>
     )

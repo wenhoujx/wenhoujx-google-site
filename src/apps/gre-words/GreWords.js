@@ -60,7 +60,9 @@ const GreWords = () => {
                 className='review'
             >
                 <div>
-                    <p>Review</p>
+                    <p
+                        className='review-header'
+                    >Review</p>
                     <TextareaAutosize
                         className='note'
                         readOnly
@@ -68,7 +70,9 @@ const GreWords = () => {
                     />
                 </div>
                 <div>
-                    <p>Mastered</p>
+                    <p
+                        className='review-header'
+                    >Mastered</p>
                     <TextareaAutosize
                         className='note'
                         readOnly
