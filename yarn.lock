@@ -81,7 +81,7 @@
     "jsesc" "^2.5.1"
     "source-map" "^0.5.0"
 
-"@babel/helper-annotate-as-pure@^7.10.4", "@babel/helper-annotate-as-pure@^7.12.13":
+"@babel/helper-annotate-as-pure@^7.0.0", "@babel/helper-annotate-as-pure@^7.10.4", "@babel/helper-annotate-as-pure@^7.12.13":
   "integrity" "sha1-D1jobfxLs7H819uAZXDhd9Q5tqs="
   "resolved" "https://artifactory.palantir.build/artifactory/api/npm/all-npm/@babel/helper-annotate-as-pure/-/helper-annotate-as-pure-7.12.13.tgz"
   "version" "7.12.13"
@@ -1174,7 +1174,7 @@
     "@babel/parser" "^7.12.13"
     "@babel/types" "^7.12.13"
 
-"@babel/traverse@^7.1.0", "@babel/traverse@^7.12.1", "@babel/traverse@^7.13.0", "@babel/traverse@^7.7.0":
+"@babel/traverse@^7.1.0", "@babel/traverse@^7.12.1", "@babel/traverse@^7.13.0", "@babel/traverse@^7.4.5", "@babel/traverse@^7.7.0":
   "integrity" "sha1-bZV1JHX4bufe0GU23jCaZfyJZsw="
   "resolved" "https://artifactory.palantir.build/artifactory/api/npm/all-npm/@babel/traverse/-/traverse-7.13.0.tgz"
   "version" "7.13.0"
@@ -1220,6 +1220,28 @@
   "integrity" "sha1-8JULuhiBlRLUL3GX5WxRiqSRzxg="
   "resolved" "https://artifactory.palantir.build/artifactory/api/npm/all-npm/@csstools/normalize.css/-/normalize.css-10.1.0.tgz"
   "version" "10.1.0"
+
+"@emotion/is-prop-valid@^0.8.8":
+  "integrity" "sha1-2yixxDaKJZtgqXMR1qlS1P0BrBo="
+  "resolved" "https://artifactory.palantir.build/artifactory/api/npm/all-npm/@emotion/is-prop-valid/-/is-prop-valid-0.8.8.tgz"
+  "version" "0.8.8"
+  dependencies:
+    "@emotion/memoize" "0.7.4"
+
+"@emotion/memoize@0.7.4":
+  "integrity" "sha1-Gb8PWvGRSREcQNmLsM+CEZ9dnus="
+  "resolved" "https://artifactory.palantir.build/artifactory/api/npm/all-npm/@emotion/memoize/-/memoize-0.7.4.tgz"
+  "version" "0.7.4"
+
+"@emotion/stylis@^0.8.4":
+  "integrity" "sha1-3qyzib1u530ef8rMzp4WxcfnjgQ="
+  "resolved" "https://artifactory.palantir.build/artifactory/api/npm/all-npm/@emotion/stylis/-/stylis-0.8.5.tgz"
+  "version" "0.8.5"
+
+"@emotion/unitless@^0.7.4":
+  "integrity" "sha1-dyESkcGQCnALinjPr9oxYNdpSe0="
+  "resolved" "https://artifactory.palantir.build/artifactory/api/npm/all-npm/@emotion/unitless/-/unitless-0.7.5.tgz"
+  "version" "0.7.5"
 
 "@eslint/eslintrc@^0.4.0":
   "integrity" "sha1-mcwKBYTXLx3zi5APsGK6mV85VUc="
@@ -2017,6 +2039,11 @@
     "@typescript-eslint/types" "4.18.0"
     "eslint-visitor-keys" "^2.0.0"
 
+"@use-it/interval@^1.0.0":
+  "integrity" "sha1-xCxo8iyimg3JKQQXRjc9lEltKzo="
+  "resolved" "https://artifactory.palantir.build/artifactory/api/npm/all-npm/@use-it/interval/-/interval-1.0.0.tgz"
+  "version" "1.0.0"
+
 "@webassemblyjs/ast@1.9.0":
   "integrity" "sha1-vYUGBLQEJFmlpBzX0zjL7Wle2WQ="
   "resolved" "https://artifactory.palantir.build/artifactory/api/npm/all-npm/@webassemblyjs/ast/-/ast-1.9.0.tgz"
@@ -2702,6 +2729,21 @@
   dependencies:
     "@babel/helper-define-polyfill-provider" "^0.1.5"
 
+"babel-plugin-styled-components@>= 1":
+  "integrity" "sha1-HewWdlEhd95rgnIR6e2low20+bk="
+  "resolved" "https://artifactory.palantir.build/artifactory/api/npm/all-npm/babel-plugin-styled-components/-/babel-plugin-styled-components-1.12.0.tgz"
+  "version" "1.12.0"
+  dependencies:
+    "@babel/helper-annotate-as-pure" "^7.0.0"
+    "@babel/helper-module-imports" "^7.0.0"
+    "babel-plugin-syntax-jsx" "^6.18.0"
+    "lodash" "^4.17.11"
+
+"babel-plugin-syntax-jsx@^6.18.0":
+  "integrity" "sha1-CvMqmm4Tyno/1QaeYtew9Y0NiUY="
+  "resolved" "https://artifactory.palantir.build/artifactory/api/npm/all-npm/babel-plugin-syntax-jsx/-/babel-plugin-syntax-jsx-6.18.0.tgz"
+  "version" "6.18.0"
+
 "babel-plugin-syntax-object-rest-spread@^6.8.0":
   "integrity" "sha1-/WU28rzhODb/o6VFjEkDpZe7O/U="
   "resolved" "https://artifactory.palantir.build/artifactory/api/npm/all-npm/babel-plugin-syntax-object-rest-spread/-/babel-plugin-syntax-object-rest-spread-6.13.0.tgz"
@@ -3199,6 +3241,11 @@
   "integrity" "sha1-kkr4gcnVJaydh/QNlk5c6pgqGAk="
   "resolved" "https://artifactory.palantir.build/artifactory/api/npm/all-npm/camelcase/-/camelcase-6.2.0.tgz"
   "version" "6.2.0"
+
+"camelize@^1.0.0":
+  "integrity" "sha1-FkpUg+Yw+kMh5a8HAg5TGDGyYJs="
+  "resolved" "https://artifactory.palantir.build/artifactory/api/npm/all-npm/camelize/-/camelize-1.0.0.tgz"
+  "version" "1.0.0"
 
 "caniuse-api@^3.0.0":
   "integrity" "sha1-Xk2Q4idJYdRikZl99Znj7QCO5MA="
@@ -3767,6 +3814,11 @@
   dependencies:
     "postcss" "^7.0.5"
 
+"css-color-keywords@^1.0.0":
+  "integrity" "sha1-/qJhbcZ2spYmhrOvjb2+GAskTgU="
+  "resolved" "https://artifactory.palantir.build/artifactory/api/npm/all-npm/css-color-keywords/-/css-color-keywords-1.0.0.tgz"
+  "version" "1.0.0"
+
 "css-color-names@^0.0.4", "css-color-names@0.0.4":
   "integrity" "sha1-gIrcLnnPhHOAabZGyyDsJ762KeA="
   "resolved" "https://artifactory.palantir.build/artifactory/api/npm/all-npm/css-color-names/-/css-color-names-0.0.4.tgz"
@@ -3827,6 +3879,15 @@
     "css-what" "^3.2.1"
     "domutils" "^1.7.0"
     "nth-check" "^1.0.2"
+
+"css-to-react-native@^3.0.0":
+  "integrity" "sha1-YtvmeAcqgkpom8/uAR/JbgKn11Y="
+  "resolved" "https://artifactory.palantir.build/artifactory/api/npm/all-npm/css-to-react-native/-/css-to-react-native-3.0.0.tgz"
+  "version" "3.0.0"
+  dependencies:
+    "camelize" "^1.0.0"
+    "css-color-keywords" "^1.0.0"
+    "postcss-value-parser" "^4.0.2"
 
 "css-tree@^1.1.2":
   "integrity" "sha1-muOTtdr9fa6KYiR1yux409j717U="
@@ -5624,7 +5685,7 @@
     "minimalistic-assert" "^1.0.0"
     "minimalistic-crypto-utils" "^1.0.1"
 
-"hoist-non-react-statics@^3.1.0":
+"hoist-non-react-statics@^3.0.0", "hoist-non-react-statics@^3.1.0":
   "integrity" "sha1-7OCsr3HWLClpwuxZ/v9CpLGoW0U="
   "resolved" "https://artifactory.palantir.build/artifactory/api/npm/all-npm/hoist-non-react-statics/-/hoist-non-react-statics-3.3.2.tgz"
   "version" "3.3.2"
@@ -9312,7 +9373,7 @@
     "strip-ansi" "6.0.0"
     "text-table" "0.2.0"
 
-"react-dom@*", "react-dom@^17.0.1":
+"react-dom@*", "react-dom@^17.0.1", "react-dom@>= 16.8.0":
   "integrity" "sha1-HeJWBHTsnw4zQoVmLt5S28VCb8Y="
   "resolved" "https://artifactory.palantir.build/artifactory/api/npm/all-npm/react-dom/-/react-dom-17.0.1.tgz"
   "version" "17.0.1"
@@ -9326,7 +9387,7 @@
   "resolved" "https://artifactory.palantir.build/artifactory/api/npm/all-npm/react-error-overlay/-/react-error-overlay-6.0.9.tgz"
   "version" "6.0.9"
 
-"react-is@^16.6.0", "react-is@^16.7.0", "react-is@^16.8.1":
+"react-is@^16.6.0", "react-is@^16.7.0", "react-is@^16.8.1", "react-is@>= 16.8.0":
   "integrity" "sha1-eJcppNw23imZ3BVt1sHZwYzqVqQ="
   "resolved" "https://artifactory.palantir.build/artifactory/api/npm/all-npm/react-is/-/react-is-16.13.1.tgz"
   "version" "16.13.1"
@@ -9446,7 +9507,7 @@
     "use-composed-ref" "^1.0.0"
     "use-latest" "^1.0.0"
 
-"react@*", "react@^0.14.0 || ^15.0.0 || ^16.0.0 || ^17.0.0", "react@^16.8.0 || ^17.0.0", "react@^17.0.1", "react@>= 16", "react@>=15", "react@17.0.1":
+"react@*", "react@^0.14.0 || ^15.0.0 || ^16.0.0 || ^17.0.0", "react@^16.8.0 || ^17.0.0", "react@^17.0.1", "react@>= 16", "react@>= 16.8.0", "react@>=15", "react@>=16.8", "react@17.0.1":
   "integrity" "sha1-bgYAQWvVdXTj+G2S7bo9kAhyYSc="
   "resolved" "https://artifactory.palantir.build/artifactory/api/npm/all-npm/react/-/react-17.0.1.tgz"
   "version" "17.0.1"
@@ -10203,6 +10264,11 @@
     "inherits" "^2.0.1"
     "safe-buffer" "^5.0.1"
 
+"shallowequal@^1.1.0":
+  "integrity" "sha1-GI1SHelbkIdAT9TctosT3wrk5/g="
+  "resolved" "https://artifactory.palantir.build/artifactory/api/npm/all-npm/shallowequal/-/shallowequal-1.1.0.tgz"
+  "version" "1.1.0"
+
 "shebang-command@^1.2.0":
   "integrity" "sha1-RKrGW2lbAzmJaMOfNj/uXer98eo="
   "resolved" "https://artifactory.palantir.build/artifactory/api/npm/all-npm/shebang-command/-/shebang-command-1.2.0.tgz"
@@ -10737,6 +10803,22 @@
     "loader-utils" "^2.0.0"
     "schema-utils" "^2.7.0"
 
+"styled-components@^5.2.1", "styled-components@>= 2":
+  "integrity" "sha1-btf60twjOCX2THGf+97dhK15EBo="
+  "resolved" "https://artifactory.palantir.build/artifactory/api/npm/all-npm/styled-components/-/styled-components-5.2.1.tgz"
+  "version" "5.2.1"
+  dependencies:
+    "@babel/helper-module-imports" "^7.0.0"
+    "@babel/traverse" "^7.4.5"
+    "@emotion/is-prop-valid" "^0.8.8"
+    "@emotion/stylis" "^0.8.4"
+    "@emotion/unitless" "^0.7.4"
+    "babel-plugin-styled-components" ">= 1"
+    "css-to-react-native" "^3.0.0"
+    "hoist-non-react-statics" "^3.0.0"
+    "shallowequal" "^1.1.0"
+    "supports-color" "^5.5.0"
+
 "stylehacks@^4.0.0":
   "integrity" "sha1-Zxj8r00eB9ihMYaQiB6NlnJqcdU="
   "resolved" "https://artifactory.palantir.build/artifactory/api/npm/all-npm/stylehacks/-/stylehacks-4.0.3.tgz"
@@ -10747,6 +10829,13 @@
     "postcss-selector-parser" "^3.0.0"
 
 "supports-color@^5.3.0":
+  "integrity" "sha1-4uaaRKyHcveKHsCzW2id9lMO/I8="
+  "resolved" "https://artifactory.palantir.build/artifactory/api/npm/all-npm/supports-color/-/supports-color-5.5.0.tgz"
+  "version" "5.5.0"
+  dependencies:
+    "has-flag" "^3.0.0"
+
+"supports-color@^5.5.0":
   "integrity" "sha1-4uaaRKyHcveKHsCzW2id9lMO/I8="
   "resolved" "https://artifactory.palantir.build/artifactory/api/npm/all-npm/supports-color/-/supports-color-5.5.0.tgz"
   "version" "5.5.0"

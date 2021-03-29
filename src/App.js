@@ -4,6 +4,7 @@ import Gomoku from './apps/gomoku/Gomoku'
 import GameOfLife from './apps/game-of-life/GameOfLife';
 import AboutMe from './apps/about-me/AboutMe';
 import GreWords from './apps/gre-words/GreWords';
+import Tetris from './apps/tetris/Tetris';
 
 function App() {
 
@@ -20,6 +21,7 @@ function App() {
         <Link to='/gomoku'>Gomoku(Connect-Five) Game</Link>
         <Link to='/game-of-life'>Conway's Game of Life Simulation</Link>
         <Link to='/gre-words'>GRE Volcabulary Flashcards</Link>
+        <Link to='tetris'>Teris Game</Link>
         <br />
 
         <Link to='/me'>About Me</Link>
@@ -51,6 +53,11 @@ function App() {
           path='/gre-words'
           component={GreWords}
         />
+        <Route
+          path='/tetris'
+          component={Tetris}
+        />
+
       </Router>
     </>
   );

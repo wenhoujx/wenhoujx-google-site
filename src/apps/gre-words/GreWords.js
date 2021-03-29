@@ -5,6 +5,7 @@ import './GreWords.css'
 import { produce } from 'immer'
 import TextareaAutosize from 'react-textarea-autosize'
 import data from './words.json'
+import { Link } from 'react-router-dom'
 
 const GreWords = () => {
     const [know, setKnow] = useState([])
@@ -49,6 +50,7 @@ const GreWords = () => {
 
     return (
         <div className='main-container'>
+            <Link to='/'>Go Back to Home</Link>
             {remaining.length === 0 ?
                 <Complete />
                 : <Card
