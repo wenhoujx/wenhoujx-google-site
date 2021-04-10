@@ -1,19 +1,17 @@
 import React from 'react'
+import styled from 'styled-components'
 
-const setColor = (value) => {
-    if (value === 0) {
-        return undefined
-    } else if (value === -1) {
-        return 'black-piece'
-    } else if (value === 1) {
-        return 'red-piece'
-    }
-}
+const StyledPiece = styled.div`
+  height: 70%;
+  width: 70%;
+  border: '1px solid';
+  border-radius: 50%;
+  background-color: ${props => props.color === -1 ? 'black' : 'red'};
+`
 
 const Piece = ({ value }) => {
     return (
-        <div className={`piece ${setColor(value)}`}>
-        </div>
+        <StyledPiece color={value} />
     )
 }
 
