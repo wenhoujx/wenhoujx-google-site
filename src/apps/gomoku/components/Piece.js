@@ -6,9 +6,10 @@ const setColor = (value) => {
     } else if (value === -1) {
         return 'black-piece'
     } else if (value === 1) {
-        return 'white-piece'
+        return 'red-piece'
     }
 }
+
 const Piece = ({ value }) => {
     return (
         <div className={`piece ${setColor(value)}`}>

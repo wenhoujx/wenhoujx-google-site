@@ -96,9 +96,9 @@ const Gomoku = () => {
 
     const showNext = () => {
         if (state.current.winningColor !== 0) {
-            return state.current.winningColor === -1 ? 'black win!' : 'white win!'
+            return state.current.winningColor === -1 ? 'black win!' : 'red win!'
         } else {
-            return state.current.turn === -1 ? 'black next' : 'white next'
+            return state.current.turn === -1 ? 'black next' : 'red next'
         }
     }
 
