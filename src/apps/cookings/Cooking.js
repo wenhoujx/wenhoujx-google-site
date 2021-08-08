@@ -1,45 +1,52 @@
-import { Flex, Box, Text, Card, Image } from "@theme-ui/components"
+import { Grid, Flex, Box, Text, Card, Image } from "@theme-ui/components"
 
 export const Cooking = ({ title, image, ingredients, steps }) => {
   return (
     <Flex p={2} mb={2}
       sx={{
-        flexDirection: "column",
         width: "100%",
-        alignItems: "center",
-        border: "solid 1px",
-        background: "LightGray",
+        background: "#AFEEEE",
+        flexWrap: "wrap"
       }}>
-      <Card
-        sx={{
-          maxWidth: 256,
-        }}>
-        <Image src={image} />
-      </Card>
-      <Text>{title}</Text>
-      <div></div>
       <Box p={2}
         sx={{
-          width: "100%",
-          background: "silver"
+          flexGrow: 1,
         }}>
-        <Text color="blue">Ingredients</Text>
-        <ul>
-          {ingredients.map(ingredient => (<li>{ingredient}</li>))}
-        </ul>
+        <Card
+          sx={{
+            maxWidth: 256,
+          }}>
+          <Image src={image} />
+        </Card>
+        <Text>{title}</Text>
       </Box>
-      <Box p={2}
+
+      <Flex
         sx={{
-          width: "100%",
-          background: "grey"
-
+          flexDirection: "column",
+          flexGrow: 3,
         }}>
-        <Text color="blue">Steps</Text>
-        <ol>
-          {steps.map(step => (<li>{step}</li>))}
-        </ol>
+        <Box p={2}
+          sx={{
+            width: "100%",
+            background: "#87CEEB"
+          }}>
+          <Text color="blue">Ingredients</Text>
+          <ul>
+            {ingredients.map(ingredient => (<li>{ingredient}</li>))}
+          </ul>
+        </Box>
+        <Box p={2}
+          sx={{
+            width: "100%",
+            background: "#90EE90"
 
-      </Box>
-
+          }}>
+          <Text color="blue">Steps</Text>
+          <ol>
+            {steps.map(step => (<li>{step}</li>))}
+          </ol>
+        </Box>
+      </Flex>
     </Flex>)
 }
