@@ -22,7 +22,6 @@ export const Cooking = ({ title, image, ingredients, steps }) => {
         sx={{
           width: "100%",
           background: "silver"
-
         }}>
         <Text color="blue">Ingredients</Text>
         <ul>
