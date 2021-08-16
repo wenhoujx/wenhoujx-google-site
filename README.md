@@ -23,4 +23,5 @@ gcloud app deploy
 
 ## ideas: 
 
-- turn chinese charater to icon with different px size. 
+- turn chinese charater to icon with different px size.
+- time tracking app 
