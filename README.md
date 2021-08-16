@@ -8,10 +8,10 @@ most basic rules with 10 rollbacks.
 
 Upload to gcloud bucket: app engine > Settings > Application Settings > Default Cloud Storage Bucket
 
-Upload `npm run build` > build/ and app.yaml
+Upload `npm run build` > the folder build/ and app.yaml
 
 Open gcloud terminal (top right)
-
+may need to create wenhoujx-website folder 
 ```
 # may need authorize
 gsutil rsync -r gs://bucket-name ./wenhoujx-website
