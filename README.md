@@ -19,3 +19,8 @@ cd ./wenhoujx-website
 gcloud app deploy
 
 ```
+
+
+## ideas: 
+
+- turn chinese charater to icon with different px size. 
