@@ -24,7 +24,7 @@ export const theme = {
   breakpoints: ['40em', '64em', '80em'],
   text: {
     icon: {
-      fontSize: 2,
+      fontSize: 1,
       fontWeight: 'bold',
     },
   },
