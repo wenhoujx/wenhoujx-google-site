@@ -1,4 +1,4 @@
-export default {
+export const theme = {
   fonts: {
     body: 'Georgia, Cambria, "Times New Roman", Times, serif',
     heading: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
@@ -22,4 +22,10 @@ export default {
   },
   space: [0, 4, 8, 16, 32, 48],
   breakpoints: ['40em', '64em', '80em'],
+  text: {
+    icon: {
+      fontSize: 2,
+      fontWeight: 'bold',
+    },
+  },
 };
