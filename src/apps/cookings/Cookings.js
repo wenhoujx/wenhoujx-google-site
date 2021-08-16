@@ -1,41 +1,57 @@
 import React from 'react'
-import { Box, Flex, Text } from '@theme-ui/components'
-import { Cooking } from './Cooking'
-import seabassImage from "./images/steamed-seabass.jpg"
-import steakImage from "./images/steak.jpeg"
+import { Box, Flex, Card, Image, Text, Grid } from '@theme-ui/components'
+import { recipes } from './recipes'
 
-const recipes = [
-  {
-    title: "Steak",
-    image: steakImage,
-    ingredients: ["steak, ribeye", "thermapen"],
-    steps: [
-      "light season steak with salt and peper",
-      "Oven pre-heat 400F",
-      "high heat cast iron pan until smoking",
-      "sear each side 1 minute",
-      "add rosemary and butter and heat another 30seconds",
-      "move to oven",
-      "until internal temp reaches 65C or 130F (for medium rare)",
-      "take out of oven (with a mint!) and rest for 10 minutes",
-      "slice and sprinkle salt",
-    ]
-  },
-  {
-    title: "Steam Seabass",
-    image: seabassImage,
-    ingredients: ["seabass", "scallion for deco", "thermapen"],
-    steps: ["light season seabass with salt and peper",
-      "boil water",
-      "medium heat to steam seabass",
-      "until internal temp reaches 60C or 140F",
-      "boil a little fish soysauce (or soysauce with brown sugar) and pour it on top of the fish"],
-  },
-]
 export const Cookings = () => {
   return (<Box>
-    {recipes.map(recipe => {
-      return (<Cooking {...recipe} />)
-    })}
+    <Grid gap={1} columns={[2, '1fr 3fr']}>
+      {recipes.map(({ title, image, steps, ingredients }) => {
+        return (
+          <>
+            <Box
+              sx={{
+                flexGrow: 1,
+              }}>
+              <Card
+                sx={{
+                  maxWidth: 256,
+                }}>
+                <Image src={image} />
+              </Card>
+              <Text>{title}</Text>
+            </Box>
+            <Flex
+              sx={{
+                flexDirection: "column",
+                flexGrow: 3,
+              }}>
+              <Box p={2}
+                sx={{
+                  width: "100%",
+                  background: "#87CEEB"
+                }}>
+                <Text color="blue">Ingredients</Text>
+                <ul>
+                  {ingredients.map(ingredient => (<li>{ingredient}</li>))}
+                </ul>
+              </Box>
+              <Box p={2}
+                sx={{
+                  width: "100%",
+                  background: "#90EE90"
+
+                }}>
+                <Text color="blue">Steps</Text>
+                <ol>
+                  {steps.map(step => (<li>{step}</li>))}
+                </ol>
+              </Box>
+            </Flex>
+          </>
+        )
+      })}
+
+    </Grid>
+
   </Box>)
 }
