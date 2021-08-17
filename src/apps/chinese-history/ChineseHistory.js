@@ -1,24 +1,40 @@
-import { Text } from '@theme-ui/components'
+import { ThemeProvider, Text, Flex, Container, Box, Button } from 'theme-ui'
+import { theme } from "../../theme"
 import { Timeline, TimelineEvent } from 'react-event-timeline'
+import { events } from "./events"
+import React from "react"
+
 
 export const ChineseHistory = () => {
+  const [lang, setLang] = React.useState("en")
+
   return (
-    <Timeline>
-      <TimelineEvent title="John Doe sent a SMS"
-        createdAt="2016-09-12 10:06 PM"
-        icon={<i className="material-icons md-18">textsms</i>}
-      >
-        I received the payment for $543. Should be shipping the item within a couple of hours.
-            </TimelineEvent>
-      <TimelineEvent
-        title="You sent an email to John Doe"
-        createdAt="2016-09-11 09:06 AM"
-        icon={<i className="material-icons md-18">email</i>}
-      >
-        Like we talked, you said that you would share the shipment details? This is an urgent order and so I
-            am losing patience. Can you expedite the process and pls do share the details asap. Consider this a
-            gentle reminder if you are on track already!
-            </TimelineEvent>
-    </Timeline>
+    <ThemeProvider theme={theme}>
+      <Container variant="main">
+        <Flex p={2}>
+          <Text variant="" p={2}>Chinese history</Text>
+          <Box>
+            <Button>EN</Button>
+            <Button>CH</Button>
+          </Box>
+        </Flex>
+        <Flex p={6}
+          sx={{
+            flexDirection: "column",
+          }}>
+
+          <Timeline>
+            {events.map(event => (
+              <TimelineEvent
+                title={event.title}
+                createdAt={event.time}
+                icon={<i className="material-icons md-18" >{event.icon}</i>}
+              />
+            ))}
+          </Timeline>
+        </Flex>
+      </Container>
+    </ThemeProvider>
+
   )
 }
