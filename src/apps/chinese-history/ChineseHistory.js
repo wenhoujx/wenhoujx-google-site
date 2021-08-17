@@ -6,23 +6,19 @@ import React from "react"
 
 
 export const ChineseHistory = () => {
-  const [lang, setLang] = React.useState("en")
-
   return (
     <ThemeProvider theme={theme}>
       <Container variant="main">
         <Flex p={2}>
           <Text variant="" p={2}>Chinese history</Text>
           <Box>
-            <Button>EN</Button>
-            <Button>CH</Button>
+            <Button mr={2}>Beep</Button>
           </Box>
         </Flex>
         <Flex p={6}
           sx={{
             flexDirection: "column",
           }}>
-
           <Timeline>
             {events.map(event => (
               <TimelineEvent
