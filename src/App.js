@@ -14,7 +14,7 @@ function App() {
     return (
       <ThemeProvider theme={theme}>
         <Container
-          px={300} >
+          variant="main">
           <Box>
             <h2><Message>Wenhoujx homepage</Message></h2>
           </Box>
