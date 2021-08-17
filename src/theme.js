@@ -28,4 +28,9 @@ export const theme = {
       fontWeight: 'bold',
     },
   },
+  layout: {
+    main: {
+      paddingX: 200
+    },
+  }
 };
