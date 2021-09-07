@@ -6,24 +6,29 @@ const kmeansClustering = (data, k) => {
   for (var i = 0; i < k; i++) {
     kmeans.push(Math.floor(Math.random() * len))
   }
-  console.log("centers", kmeans)
 
-  for (var j = 0; j < len; j++) {
-    const center = findNearest(j, kmeans, width)
-    //console.log("center", center)
-    data.data[j * 4] = data.data[center * 4 ]
-    data.data[j * 4+1] = data.data[center * 4 +1]
-    data.data[j * 4+2] = data.data[center * 4 +2]
-    data.data[j * 4+3] = data.data[center * 4 +3]
+  const blockSize = 10
+  for (var w = 0; w < width; w += blockSize) {
+    for (var h = 0; h < height; h += blockSize) {
+      const base = h * width + w
+      const center = findNearest(h * width + w, kmeans, width)
+      for (var th = 0; th < blockSize; th++) {
+        for (var tw = 0; tw < blockSize; tw++) {
+          data.data[((h + th) * width + w + tw) * 4] = data.data[center * 4]
+          data.data[((h + th) * width + w + tw) * 4 + 1] = data.data[center * 4 + 1]
+          data.data[((h + th) * width + w + tw) * 4 + 2] = data.data[center * 4 + 2]
+          data.data[((h + th) * width + w + tw) * 4 + 3] = data.data[center * 4 + 3]
+        }
+      }
+    }
   }
-  console.log("data", data)
   return data
 }
 
 const findNearest = (i, kmeans, width) => {
   var smallestI = 0
   var smallest = getDistanceSquare(i, kmeans[0], width)
-  for (var j =1; j < kmeans.length ; j++) {
+  for (var j = 1; j < kmeans.length; j++) {
     const distance = getDistanceSquare(i, kmeans[j], width)
     if (distance < smallest) {
       smallest = distance
@@ -32,12 +37,14 @@ const findNearest = (i, kmeans, width) => {
   }
   return kmeans[smallestI]
 }
+
+// l1 distance
 const getDistanceSquare = (i, center, width) => {
   const ix = getX(i, width)
   const iy = getY(i, width)
   const centerx = getX(center, width)
   const centery = getY(center, width)
-  return (ix - centerx) ** 2 + (iy - centery) ** 2
+  return Math.abs(ix - centerx) + Math.abs(iy - centery)
 }
 
 const getX = (i, width) => {
