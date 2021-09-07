@@ -7,6 +7,7 @@ import kmeansClustering from "./kmeans"
 const width = 400
 const maxK = 2000
 const minK = 50
+
 const PhotoArt = () => {
   const [image, setImage] = useState()
   const [kmeans, setKmeans] = useState(30)
