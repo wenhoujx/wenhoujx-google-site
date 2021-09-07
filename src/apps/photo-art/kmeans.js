@@ -7,10 +7,9 @@ const kmeansClustering = (data, k) => {
     kmeans.push(Math.floor(Math.random() * len))
   }
 
-  const blockSize = 10
+  const blockSize = 3
   for (var w = 0; w < width; w += blockSize) {
     for (var h = 0; h < height; h += blockSize) {
-      const base = h * width + w
       const center = findNearest(h * width + w, kmeans, width)
       for (var th = 0; th < blockSize; th++) {
         for (var tw = 0; tw < blockSize; tw++) {
