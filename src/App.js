@@ -1,13 +1,13 @@
-import { BrowserRouter as Router, Link, Route } from 'react-router-dom';
-import { ThemeProvider, Box, Card, Container, Message, Text, Grid, Image, Flex, Avatar } from "theme-ui";
 import AboutMe from './apps/about-me/AboutMe';
-import { Cookings } from "./apps/cookings/Cookings";
 import GameOfLife from './apps/game-of-life/GameOfLife';
 import Gomoku from './apps/gomoku/Gomoku';
 import GreWords from './apps/gre-words/GreWords';
-import { theme } from "./theme";
+import PhotoArt from './apps/photo-art/PhotoArt';
+import { BrowserRouter as Router, Link, Route } from 'react-router-dom';
+import { Cookings } from "./apps/cookings/Cookings";
+import { ThemeProvider, Box, Card, Container, Message, Text, Grid, Image, Flex, Avatar } from "theme-ui";
 import { chefHatIcon, conwayIcon, gomokuIcon, greIcon, meIcon, timelineIcon } from "./icons"
-import { ChineseHistory } from "./apps/chinese-history/ChineseHistory"
+import { theme } from "./theme";
 
 function App() {
   const homepage = () => {
@@ -53,8 +53,8 @@ function App() {
               sx={{
                 alignItems: "center"
               }}>
-              <Avatar m={2} src={timelineIcon} sx={{ width: "30px" }} />
-              <Link to='/chinese-history'><Text variant="icon">Chinese History Timeline</Text></Link>
+              <Avatar m={2} src={greIcon} sx={{ width: "30px" }} />
+              <Link to='/photo-art'><Text variant="icon">Photo Art</Text></Link>
             </Flex>
             <Flex p={3}
               sx={{
@@ -99,8 +99,8 @@ function App() {
           component={GreWords}
         />
         <Route
-          path='/chinese-history'
-          component={ChineseHistory}
+          path='/photo-art'
+          component={PhotoArt}
         />
       </Router>
     </>
