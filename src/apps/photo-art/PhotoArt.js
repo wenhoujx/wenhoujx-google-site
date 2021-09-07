@@ -1,7 +1,8 @@
 import Canvas from "./Canvas"
 import React, { useState, useCallback } from 'react'
-import pho from "./images/IMG-1830.jpg"
+import pho from "./images/IMG-1949.jpg"
 import { Box, Flex, Text, Input, Slider } from "theme-ui"
+import kmeansClustering from "./kmeans"
 
 const width = 400
 const PhotoArt = () => {
@@ -48,6 +49,14 @@ const PhotoArt = () => {
       ctx.canvas.width = image.width;
       ctx.canvas.height = image.height;
       ctx.drawImage(image, 0, 0, image.width, image.height);
+      var data
+      try {
+        data = ctx.getImageData(0, 0, image.width, image.height);
+      } catch (e) {
+        console.log("not rbg")
+      }
+      data = kmeansClustering(data, kmeans)
+      ctx.putImageData(data, 0,0)
     }
   }
 
@@ -71,7 +80,7 @@ const PhotoArt = () => {
 
       </Flex>
       <Box p={100}>
-        <Slider defaultValue={25} onChange={changeKmeansSlider}/>
+        <Slider defaultValue={100} max={10000} min={50} onChange={changeKmeansSlider} />
         <Text>{kmeans}</Text>
       </Box>
     </Flex>
