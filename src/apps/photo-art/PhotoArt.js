@@ -5,6 +5,8 @@ import { Box, Flex, Text, Input, Slider } from "theme-ui"
 import kmeansClustering from "./kmeans"
 
 const width = 400
+const maxK = 2000
+const minK = 50
 const PhotoArt = () => {
   const [image, setImage] = useState()
   const [kmeans, setKmeans] = useState(30)
@@ -80,7 +82,7 @@ const PhotoArt = () => {
 
       </Flex>
       <Box p={100}>
-        <Slider defaultValue={100} max={10000} min={50} onChange={changeKmeansSlider} />
+        <Slider defaultValue={100} max={maxK} min={minK} onChange={changeKmeansSlider} />
         <Text>{kmeans}</Text>
       </Box>
     </Flex>
