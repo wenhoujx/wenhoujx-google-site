@@ -2,17 +2,19 @@ const kmeansClustering = (data, k) => {
   const width = data.width
   const height = data.height
   const len = width * height
+
   var kmeans = []
-  for (var i = 0; i < k; i++) {
+
+  for (let i = 0; i < k; i++) {
     kmeans.push(Math.floor(Math.random() * len))
   }
 
-  const blockSize = 3
-  for (var w = 0; w < width; w += blockSize) {
-    for (var h = 0; h < height; h += blockSize) {
+  const blockSize = 1
+  for (let w = 0; w < width; w += blockSize) {
+    for (let h = 0; h < height; h += blockSize) {
       const center = findNearest(h * width + w, kmeans, width)
-      for (var th = 0; th < blockSize; th++) {
-        for (var tw = 0; tw < blockSize; tw++) {
+      for (let th = 0; th < blockSize; th++) {
+        for (let tw = 0; tw < blockSize; tw++) {
           data.data[((h + th) * width + w + tw) * 4] = data.data[center * 4]
           data.data[((h + th) * width + w + tw) * 4 + 1] = data.data[center * 4 + 1]
           data.data[((h + th) * width + w + tw) * 4 + 2] = data.data[center * 4 + 2]
