@@ -9,20 +9,10 @@ const maxK = 2000
 const minK = 50
 
 const PhotoArt = () => {
-  const [image, setImage] = useState()
   const [kmeans, setKmeans] = useState(30)
 
   const changeKmeansSlider = (e) => {
     setKmeans(e.target.value)
-  }
-  const handleImageUpload = (e) => {
-    const filesToUpload = e.target.files[0];
-    const reader = new FileReader();
-    reader.onload = (e) => {
-      setImage(e.target.result)
-      console.log("image", e.target.result)
-    }
-    reader.readAsDataURL(filesToUpload);
   }
 
   const drawOriginal = (ctx) => {
@@ -59,7 +49,7 @@ const PhotoArt = () => {
         console.log("not rbg")
       }
       data = kmeansClustering(data, kmeans)
-      ctx.putImageData(data, 0,0)
+      ctx.putImageData(data, 0, 0)
     }
   }
 
@@ -69,10 +59,8 @@ const PhotoArt = () => {
       alignItems: "center",
     }}>
       <Box p={2}>
-        <Input type="file" accept="image/*" onChange={handleImageUpload} />
+        <Text>Use Slider To Control The Resolution</Text>
       </Box>
-      <Box p={2}>Select art style here</Box>
-      <Text>Result</Text>
       <Flex>
         <Box p={2}>
           <Canvas draw={drawOriginal} />
@@ -80,7 +68,6 @@ const PhotoArt = () => {
         <Box p={2}>
           <Canvas draw={drawKmeans} />
         </Box>
-
       </Flex>
       <Box p={100}>
         <Slider defaultValue={100} max={maxK} min={minK} onChange={changeKmeansSlider} />
