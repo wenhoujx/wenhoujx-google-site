@@ -6,7 +6,7 @@ import PhotoArt from './apps/photo-art/PhotoArt';
 import { BrowserRouter as Router, Link, Route } from 'react-router-dom';
 import { Cookings } from "./apps/cookings/Cookings";
 import { ThemeProvider, Box, Card, Container, Message, Text, Grid, Image, Flex, Avatar } from "theme-ui";
-import { chefHatIcon, conwayIcon, gomokuIcon, greIcon, meIcon, timelineIcon } from "./icons"
+import { chefHatIcon, conwayIcon, gomokuIcon, greIcon, meIcon, timelineIcon, cameraIcon } from "./icons"
 import { theme } from "./theme";
 
 function App() {
@@ -53,7 +53,7 @@ function App() {
               sx={{
                 alignItems: "center"
               }}>
-              <Avatar m={2} src={greIcon} sx={{ width: "30px" }} />
+              <Avatar m={2} src={cameraIcon} sx={{ width: "30px" }} />
               <Link to='/photo-art'><Text variant="icon">Photo Art</Text></Link>
             </Flex>
             <Flex p={3}
