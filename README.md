@@ -25,3 +25,12 @@ gcloud app deploy
 - turn chinese charater to icon with different px size.
 - time tracking app
 - goodbye pets 
+
+## dev
+```sh 
+# install package 
+npm i react-bootstrap bootstrap 
+
+# start server 
+npm run start
+``` 
