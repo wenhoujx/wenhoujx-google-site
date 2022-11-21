@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { produce } from 'immer'
 import './GameOfLife.css'
+import { Button, Stack } from 'react-bootstrap'
 
 const nRows = 30
 const nCols = 30
@@ -83,7 +84,7 @@ const GameOfLife = () => {
             <div className='header'>
                 <a href='https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life'>
                     Conway's Game of Life Simulation
-                    </a>
+                </a>
             </div>
             <br />
             <div
@@ -103,28 +104,23 @@ const GameOfLife = () => {
                 )))}
 
             </div>
-            <div
-                className='control'
+            <Stack direction='horizontal'
+                className='d-flex justify-content-center'
             >
-                <button
-                    className='btn'
-                    onClick={() => {
-                        runningRef.current = !running
-                        setRunning(!running)
-                    }}
-                >
+                <Button onClick={() => {
+                    runningRef.current = !running
+                    setRunning(!running)
+                }}>
                     {running ? 'Stop' : 'Run'}
-                </button>
-                <button
-                    className='btn'
-                    onClick={randomGrid}>
+                </Button>
+                <Button onClick={randomGrid}>
                     Random
-                    </button>
-                <button
-                    className='btn'
-                    onClick={clearGrid}>
-                    Clear</button>
-            </div>
+                </Button>
+                <Button onClick={clearGrid}>
+                    Clear
+                </Button>
+            </Stack>
+
             <div>
                 <Link to='/'>Go Back to Home</Link>
             </div>
