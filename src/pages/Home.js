@@ -50,7 +50,7 @@ export default function Home() {
     return (
         <Stack gap={3}>
             <h2 className='bg-dark text-white p-5'>
-                Wenhoujx homepage
+                Wenhoujx Homepage
             </h2>
             <Container>
                 <Row md={3} xs={1} lg={4} className='g-3 bg-light'>
