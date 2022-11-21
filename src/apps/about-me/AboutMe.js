@@ -1,7 +1,6 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 import Card from 'react-bootstrap/Card'
-import { Col, ListGroup, ListGroupItem, Row, Stack } from 'react-bootstrap'
+import { Col, Row } from 'react-bootstrap'
 
 export function AboutMe() {
     const skills = ['Java', 'JVM', "YourKit", 'undertow', 'jersey',
