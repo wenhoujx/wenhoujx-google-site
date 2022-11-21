@@ -7,7 +7,7 @@ export const recipes = [
   {
     title: "Steak (牛排)",
     image: steak,
-    ingredients: ["steak, ribeye", "thermapen"],
+    ingredients: ["steak", "thermapen"],
     steps: [
       "light season steak with salt and peper",
       "Oven pre-heat 400F",

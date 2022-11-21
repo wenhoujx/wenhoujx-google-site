@@ -2,11 +2,16 @@ import './Gomoku.css';
 import { Link } from 'react-router-dom'
 import { produce } from 'immer';
 import React, { useState } from 'react'
-import Square from './components/Square';
+import { Square } from './components/Square';
+import Container from 'react-bootstrap/Container'
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
+import Button from 'react-bootstrap/Button'
+import Stack from 'react-bootstrap/Stack'
 
-const Gomoku = () => {
-    const nRows = 25;
-    const nCols = 25;
+export function Gomoku() {
+    const nRows = 20;
+    const nCols = 20;
     const maxHistory = 10;
     const nWins = 5;
 
@@ -38,8 +43,10 @@ const Gomoku = () => {
                     copy.past = [copy.current, ...copy.past.slice(0, maxHistory - 1)]
                     copy.current = produce(copy.current, (cur) => {
                         cur.board[row][col] = cur.turn
-                        cur.turn = - cur.turn
                         cur.winningColor = winningColor(cur.board)
+                        if (cur.winningColor === 0) {
+                            cur.turn = - cur.turn
+                        }
                     })
                 }
             })
@@ -103,51 +110,57 @@ const Gomoku = () => {
     }
 
     return (
-        <div
-            className='gomoku-container'
-        >
-            <div className='board'
-                style={{
-                    display: 'grid',
-                    gridTemplateColumns: `repeat(${nCols}, 40px)`
-                }}
-            >
+        <Container className='d-flex flex-column align-items-center'>
+            <Container >
                 {state.current.board.map((row, rowIndex) =>
-                    row.map((_, colIndex) =>
-                        <Square
-                            row={rowIndex}
-                            col={colIndex}
-                            value={state.current.board[rowIndex][colIndex]}
-                            onSelect={() => placePiece(rowIndex, colIndex)}
-                        />
-                    )
+                    <Row key={rowIndex} className="justify-content-md-center flex-nowrap" xs md lg xxs={nCols}>
+                        {row.map((_, colIndex) => (
+                            <Col
+                                key={`${rowIndex}-${colIndex}`}
+                                className='d-flex align-items-center justify-content-center px-0'
+                                style={{
+                                    maxWidth: '35px',
+                                    width: '35px',
+                                    height: '35px',
+                                    backgroundColor: (rowIndex + colIndex) % 2 === 1 ? '#e3ae8f' : '#aba09a',
+                                }}
+                                onClick={() => placePiece(rowIndex, colIndex)}
+                            >
+                                <Square
+                                    value={state.current.board[rowIndex][colIndex]}
+                                />
+                            </Col>))}
+                    </Row>
                 )}
-            </div>
-
-            <div className='controls'>
-                <div className='turn-shower'>
-                    {showNext()}
-                </div>
-
-                <button
-                    className='btn'
+            </Container>
+            <Stack gap={3}
+                direction="horizontal"
+                className='pt-1 mx-auto'            >
+                <Button variant='primary'
                     onClick={rollBack}
                 >
-                    Roll Back</button>
-
-                <button
-                    className='btn'
+                    Roll Back
+                </Button>
+                <div className='turn-shower border-bottom border-2 p-2'
+                    style={{
+                        color: state.current.turn === 1 ? 'red' : 'black'
+                    }}>
+                    {showNext()}
+                </div>
+                <Button
+                    variant='primary'
                     onClick={clearBoard}
                 >
                     {state.current.winningColor === 0
                         ? 'Clear Board'
                         : 'Next Game?'}
-                </button>
-            </div>
-            <Link to='/'>Go Back to Home</Link>
-        </div >
+                </Button>
 
+            </Stack>
+            <Link
+                to='/'>
+                Go Back to Home
+            </Link>
+        </Container>
     )
 }
-
-export default Gomoku
