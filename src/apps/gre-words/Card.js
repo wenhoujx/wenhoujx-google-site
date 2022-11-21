@@ -1,11 +1,12 @@
 import React, { useState, useEffect, useCallback } from 'react'
+import { Button, Stack, Card as CardBs } from 'react-bootstrap'
 
 const left = 37
 const right = 39
 
 const Card = ({ nextWord: { word, meaning }, onKnow, onNotKnow }) => {
     const [showMeaning, setShowMeaning] = useState(false)
-    const [websterMenaing, setWebsterMeaning] = useState(meaning)
+    const [websterMeaning, setWebsterMeaning] = useState(meaning)
 
     const clickNextWord = useCallback(() => {
         setShowMeaning(false)
@@ -51,40 +52,49 @@ const Card = ({ nextWord: { word, meaning }, onKnow, onNotKnow }) => {
     })
 
     return (
-        <div className='card-container'>
+        <Stack 
+        className='d-flex align-items-center'>
             <div className='card-control'>
                 {
                     showMeaning ?
-                        <button
-                            className='btn'
-                            onClick={clickNextWord}
-                        >
-                            next word (&#x2192;)</button>
+                        <Button
+                            onClick={clickNextWord}>
+                            next word (&#x2192;)
+                        </Button>
                         : (
-                            <>
-                                <button
-                                    className='btn'
-                                    onClick={clickNotKnow}
-                                >
-                                    (&#x2190;) I do NOT know this word </button>
-                                <button
-                                    className='btn'
-                                    onClick={clickKnow}
-                                >
-                                    I know this word (&#x2192;)</button>
-                            </>)
+                            <Stack direction='horizontal'
+                                className='d-flex justify-content-end'>
+                                <Button onClick={clickNotKnow}
+                                    variant='warning'>
+                                    (&#x2190;) I do NOT know this word
+                                </Button>
+                                <Button onClick={clickKnow}
+                                    variant='success'>
+                                    I know this word (&#x2192;)
+                                </Button>
+                            </Stack>
+                        )
                 }
             </div>
-            <div className='card'>
-                {word}
-            </div>
-            {
-                showMeaning &&
-                <p className='meaning'>
-                    {websterMenaing}
-                </p>
-            }
-        </div>
+            {showMeaning ?
+                (<CardBs className='bg-warning'>
+                    <CardBs.Body>
+                        <CardBs.Title>
+                            {word}
+                        </CardBs.Title>
+                        <CardBs.Text className='text-muted'>
+                            {websterMeaning}
+                        </CardBs.Text>
+                    </CardBs.Body>
+                </CardBs>) : (
+                    <CardBs className='bg-info'>
+                        <CardBs.Body>
+                            <CardBs.Title>{word}</CardBs.Title>
+                        </CardBs.Body>
+                    </CardBs>
+                )}
+        </Stack>
+
     )
 }
 

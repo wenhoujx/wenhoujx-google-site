@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
 import Card from './Card'
 import Complete from './Complete'
-import './GreWords.css'
 import { produce } from 'immer'
-import TextareaAutosize from 'react-textarea-autosize'
 import data from './words.json'
 import { Link } from 'react-router-dom'
+import Stack from 'react-bootstrap/Stack'
+import { Cart } from './Cart'
 
 const GreWords = () => {
     const [know, setKnow] = useState([])
@@ -14,6 +14,7 @@ const GreWords = () => {
         const words = []
         for (let key in data) {
             words.push({
+                // word schema 
                 word: key,
                 meaning: data[key]
             })
@@ -49,7 +50,8 @@ const GreWords = () => {
 
 
     return (
-        <div className='main-container'>
+        <Stack gap={4}
+            className='d-flex align-items-center'>
             <Link to='/'>Go Back to Home</Link>
             {remaining.length === 0 ?
                 <Complete />
@@ -58,38 +60,20 @@ const GreWords = () => {
                     onKnow={onKnow}
                     onNotKnow={onNotKnow}
                 />}
-            <div
-                className='review'
-            >
-                <div>
-                    <p
-                        className='review-header'
-                    >
-                        {'Review: ' + notKnow.length}
-                    </p>
-                    <TextareaAutosize
-                        className='note'
-                        readOnly
-                        value={notKnow.map(({ word, meaning }) => `${word}: ${meaning}`).join('\r\n\r\n')}
-                    />
-                </div>
-                <div>
-                    <p
-                        className='review-header'
-                    >
-                        {'Mastered: ' + know.length}
-                    </p>
-                    <TextareaAutosize
-                        className='note'
-                        readOnly
-                        wrap='soft'
-                        value={know.map(({ word, meaning }) => `${word}: ${meaning}`).join('\r\n\r\n')}
-                    />
+            <Stack direction='horizontal'
+                className='d-flex justify-content-center'
+                gap={2}>
+                <Cart
+                    bgColor='#ffc008'
+                    title='Review'
+                    words={notKnow}></Cart>
+                <Cart
+                    bgColor='green'
+                    title='Mastered'
+                    words={know}></Cart>
+            </Stack>
+        </Stack>
 
-                </div>
-
-            </div>
-        </div>
     )
 }
 
