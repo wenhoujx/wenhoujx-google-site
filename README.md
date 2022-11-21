@@ -15,9 +15,12 @@ Open gcloud terminal (top right)
 may need to create wenhoujx-website folder 
 ```
 # may need authorize
+mkdir ./wenhoujx-website
 gsutil rsync -r gs://bucket-name ./wenhoujx-website
+# gsutil rsync -r gs://cellular-virtue-287501.appspot.com ./wenhoujx-website
 cd ./wenhoujx-website
 gcloud app deploy
+# make sure billing account is connected and enabled.
 ```
 
 ## ideas: 
