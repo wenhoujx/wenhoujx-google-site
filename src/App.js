@@ -6,7 +6,7 @@ import { TBD } from './pages/TBD'
 import { Cookings } from './apps/cookings/Cookings'
 import { AboutMe } from './apps/about-me/AboutMe'
 import {Gomoku} from './apps/gomoku/Gomoku'
-
+import GameOfLife from './apps/game-of-life/GameOfLife';
 
 function App() {
   return (
@@ -16,7 +16,7 @@ function App() {
         <Route path='/cookings' element={<Cookings />} />
         <Route path='/me' element={<AboutMe />} />
         <Route path='/gomoku' element={<Gomoku />} />
-        <Route path='/game-of-life' element={<TBD />} />
+        <Route path='/game-of-life' element={<GameOfLife />} />
         <Route path='/photo-art' element={<TBD />} />
 
       </Routes>
